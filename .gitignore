@@ -1,0 +1,18 @@
+# macOS
+.DS_Store
+
+# Python venv
+.venv/
+
+# Lean 4 build artifacts
+proofs/.lake/
+proofs/lake-packages/
+
+# Large files
+catagi.pdf
+
+# Editor
+*.swp
+*~
+.vscode/
+catagi.md

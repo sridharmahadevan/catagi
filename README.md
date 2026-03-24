@@ -1,0 +1,103 @@
+# Categories for AGI — Lean 4 Formalization
+
+Formal verification in [Lean 4](https://lean-lang.org/) + [Mathlib](https://leanprover-community.github.io/mathlib4_docs/) of the categorical and mathematical claims from:
+
+> **Sridhar Mahadevan**, *Categories for AI: An Introduction to Category Theory with Applications to Artificial General Intelligence*, UMass CMPSCI 692CT.
+
+## Overview
+
+This project extracts all numbered definitions, theorems, lemmas, and examples from the book and formalizes them as machine-checked proofs. The formalization covers:
+
+- **65 definitions** — categories, functors, adjunctions, limits, Kan extensions, toposes, sieves, causal models, learning categories, transformers, and more
+- **20 theorems** — fully proved including Yoneda, adjoint functor properties, causal universality, Radon-Nikodym/Kan duality, Grothendieck topology closure, and comonad coalgebra limits
+- **4 lemmas** — commutator bounds via triangle inequality and Lipschitz estimates
+- **14 examples** — lifting problems, quotient-as-coequalizer, discrete (co)products, and more
+
+**Zero `sorry`** — every proof obligation is discharged.
+
+## Project Structure
+
+```
+proofs/
+├── lakefile.lean              # Lean 4 project config (Mathlib dependency)
+├── lean-toolchain             # leanprover/lean4:v4.29.0-rc6
+├── CatagiProofs.lean          # Root import (all 21 modules)
+├── CatagiProofs/
+│   ├── BasicCategory.lean     # Defs 1-5: Categories, morphisms, isomorphisms
+│   ├── Functors.lean          # Defs 6-10: Functors, natural transformations, Yoneda
+│   ├── AdjointFunctors.lean   # Defs 11-14, Thms 3-8: Adjunctions, RAPL/LAPC
+│   ├── Diagrams.lean          # Defs 15-22, Thm 2, Exs 5-7: Limits, Kan extensions
+│   ├── MonoidalEnriched.lean  # Defs 23-27: Monoidal and enriched categories
+│   ├── YonedaAttention.lean   # Attention as enriched Yoneda (structural analogy)
+│   ├── SimplicialSets.lean    # Defs 31-33: Simplicial sets, horns, boundaries
+│   ├── LiftingProblems.lean   # Defs 34-36, Exs 13-14: Lifting, weak factorization
+│   ├── GrothendieckSite.lean  # Defs 46-49: Sieves, topologies, subobject classifier
+│   ├── ToposCausal.lean       # Defs 37-40, Thms 9-11: Topos causal models
+│   ├── CausalFunctors.lean    # Defs 42-50, Thms 12-16: Causal functors, Kan
+│   ├── CausalDensity.lean     # Thm 18: Radon-Nikodym / Kan duality
+│   ├── DoCalculus.lean        # Defs 51-56: SCM, do-calculus, counterfactuals
+│   ├── JudoCalculus.lean      # Thm 17: j-do calculus, Grothendieck closure
+│   ├── Coalgebras.lean        # Defs 57-58: F-coalgebras, bisimulation
+│   ├── LearnCategory.lean     # Defs 59-61: Learn/Param categories (quotient types)
+│   ├── TransformerCategory.lean # Defs 28-30: Transformer & LLM categories
+│   ├── DynamicCompositionality.lean # Def 41: Commutator energy, Čech obstruction
+│   ├── CommutatorBounds.lean  # Lemmas 1-4: Commutator bounds
+│   ├── ToposConsciousness.lean # Thm 19, Def 62: Topos consciousness, Mitchell-Bénabou
+│   └── UniversalDecision.lean # Defs 63-65: Universal decision models, Witsenhausen
+└── docs/
+    ├── CatagiProofs.md        # Combined Markdown documentation
+    ├── CatagiProofs.html      # HTML with table of contents
+    ├── CatagiProofs.pdf       # PDF via LuaLaTeX
+    └── md/                    # Individual module docs (21 files)
+```
+
+## Building
+
+### Prerequisites
+
+- [elan](https://github.com/leanprover/elan) (Lean version manager)
+
+### Build
+
+```bash
+cd proofs
+lake exe cache get    # Download pre-built Mathlib (recommended, ~10 min first time)
+lake build            # Build all 21 modules (~2738 jobs)
+```
+
+### Verify zero sorry
+
+```bash
+grep -rn 'sorry' proofs/CatagiProofs/ --include='*.lean' | grep -v '\-\-' | grep -v '/\-'
+# Should return nothing
+```
+
+## Documentation
+
+Pre-built docs are in `proofs/docs/`:
+
+| Format | File | Size |
+|--------|------|------|
+| Markdown | [`CatagiProofs.md`](proofs/docs/CatagiProofs.md) | 124 KB |
+| HTML | [`CatagiProofs.html`](proofs/docs/CatagiProofs.html) | 168 KB |
+| PDF | [`CatagiProofs.pdf`](proofs/docs/CatagiProofs.pdf) | 260 KB |
+
+To regenerate:
+
+```bash
+cd proofs
+lake exe mdgen CatagiProofs docs/md    # Generate per-module markdown
+# Then use pandoc for HTML/PDF
+```
+
+## Key Technical Decisions
+
+- **LearnCategory**: Uses quotient types with `Equiv.punitProd`/`Equiv.prodPUnit`/`Equiv.prodAssoc` to handle the `Unit × P ≅ P` isomorphism needed for category axioms
+- **ToposCausal**: TCM/SCM category instances with `HasFiniteLimits` proved via terminal + pullbacks
+- **CausalFunctors**: Kan extensions via `yoneda.lan`, Heyting implication on sieves
+- **Subobject classifier**: Explicit `Cᵒᵖ ⥤ Type` functor via `Sieve` + `Sieve.pullback`
+- **DynamicCompositionality**: Proved properties (nonneg, symmetry, zero ↔ commutativity)
+
+## License
+
+[MIT](LICENSE)
