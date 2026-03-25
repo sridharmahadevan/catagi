@@ -6,12 +6,14 @@ Formal verification in [Lean 4](https://lean-lang.org/) + [Mathlib](https://lean
 
 ## Overview
 
-This project extracts all numbered definitions, theorems, lemmas, and examples from the book and formalizes them as machine-checked proofs. The formalization covers:
+This project formalizes covered definitions, theorems, lemmas, and examples
+from the book as machine-checked Lean 4 artifacts. The current coverage includes
+the original core chapters together with newer extensions for:
 
-- **65 definitions** — categories, functors, adjunctions, limits, Kan extensions, toposes, sieves, causal models, learning categories, transformers, and more
-- **20 theorems** — fully proved including Yoneda, adjoint functor properties, causal universality, Radon-Nikodym/Kan duality, Grothendieck topology closure, and comonad coalgebra limits
-- **4 lemmas** — commutator bounds via triangle inequality and Lipschitz estimates
-- **14 examples** — lifting problems, quotient-as-coequalizer, discrete (co)products, and more
+- **BASKET / ROCKET** — operational plans, financially grounded reranking, and normalization operators
+- **Predictive State Representations in a Topos** — separating tests, local predictive sections, and obstruction-style gluing
+- **Universal RL / Deep URL** — coalgebraic RL abstractions, Bellman operators, structural losses, and hypothesis restriction
+- the previously covered foundations: categories, functors, adjunctions, Kan extensions, toposes, causal models, coalgebras, transformers, and consciousness
 
 **Zero `sorry`** — every proof obligation is discharged.
 
@@ -21,7 +23,7 @@ This project extracts all numbered definitions, theorems, lemmas, and examples f
 proofs/
 ├── lakefile.lean              # Lean 4 project config (Mathlib dependency)
 ├── lean-toolchain             # leanprover/lean4:v4.29.0-rc6
-├── CatagiProofs.lean          # Root import (all 21 modules)
+├── CatagiProofs.lean          # Root import (all 25 modules)
 ├── CatagiProofs/
 │   ├── BasicCategory.lean     # Defs 1-5: Categories, morphisms, isomorphisms
 │   ├── Functors.lean          # Defs 6-10: Functors, natural transformations, Yoneda
@@ -37,18 +39,22 @@ proofs/
 │   ├── CausalDensity.lean     # Thm 18: Radon-Nikodym / Kan duality
 │   ├── DoCalculus.lean        # Defs 51-56: SCM, do-calculus, counterfactuals
 │   ├── JudoCalculus.lean      # Thm 17: j-do calculus, Grothendieck closure
+│   ├── BasketRocket.lean      # BASKET/ROCKET: operational plans, reranking, normalization
+│   ├── PredictiveStateTopos.lean # PSR in a topos: local tests, gluing, obstruction
 │   ├── Coalgebras.lean        # Defs 57-58: F-coalgebras, bisimulation
 │   ├── LearnCategory.lean     # Defs 59-61: Learn/Param categories (quotient types)
 │   ├── TransformerCategory.lean # Defs 28-30: Transformer & LLM categories
 │   ├── DynamicCompositionality.lean # Def 41: Commutator energy, Čech obstruction
 │   ├── CommutatorBounds.lean  # Lemmas 1-4: Commutator bounds
 │   ├── ToposConsciousness.lean # Thm 19, Def 62: Topos consciousness, Mitchell-Bénabou
-│   └── UniversalDecision.lean # Defs 63-65: Universal decision models, Witsenhausen
+│   ├── UniversalDecision.lean # Defs 63-65: Universal decision models, Witsenhausen
+│   ├── UniversalRL.lean       # URL: MDPs, Bellman operators, final coalgebra witnesses
+│   └── DeepURL.lean           # Deep URL: structural losses, residuals, hypothesis restriction
 └── docs/
     ├── CatagiProofs.md        # Combined Markdown documentation
     ├── CatagiProofs.html      # HTML with table of contents
     ├── CatagiProofs.pdf       # PDF via LuaLaTeX
-    └── md/                    # Individual module docs (21 files)
+	    └── md/                    # Individual module docs
 ```
 
 ## Building
@@ -62,7 +68,7 @@ proofs/
 ```bash
 cd proofs
 lake exe cache get    # Download pre-built Mathlib (recommended, ~10 min first time)
-lake build            # Build all 21 modules (~2738 jobs)
+lake build            # Build all 25 modules
 ```
 
 ### Verify zero sorry
@@ -97,6 +103,10 @@ lake exe mdgen CatagiProofs docs/md    # Generate per-module markdown
 - **CausalFunctors**: Kan extensions via `yoneda.lan`, Heyting implication on sieves
 - **Subobject classifier**: Explicit `Cᵒᵖ ⥤ Type` functor via `Sieve` + `Sieve.pullback`
 - **DynamicCompositionality**: Proved properties (nonneg, symmetry, zero ↔ commutativity)
+- **BasketRocket**: Finite-poset operational plans, reward-maximizing reranking, normalization operators
+- **PredictiveStateTopos**: Predictive profiles, separating test families, overlap obstructions, single-context PSR reduction
+- **UniversalRL**: Markov chains, MDPs, Bellman fixed points, asynchronous box invariants, final coalgebra witnesses
+- **DeepURL**: GT/DB-style structural loss, total loss decomposition, structural hypothesis restriction
 
 ## License
 

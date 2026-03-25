@@ -22,9 +22,15 @@ import CatagiProofs.CausalFunctors
 -- Judo calculus (Definitions 52–57, Theorem 17)
 import CatagiProofs.DoCalculus
 import CatagiProofs.JudoCalculus
+-- Agentic workflow geometry and predictive-state sheaves
+import CatagiProofs.BasketRocket
+import CatagiProofs.PredictiveStateTopos
 -- Causal density (Definitions 58–59, Theorem 18)
 import CatagiProofs.CausalDensity
 -- Consciousness (Definitions 60–65, Theorems 19–20)
 import CatagiProofs.Coalgebras
 import CatagiProofs.ToposConsciousness
 import CatagiProofs.UniversalDecision
+-- Reinforcement learning extensions
+import CatagiProofs.UniversalRL
+import CatagiProofs.DeepURL
