@@ -8,7 +8,7 @@ Formalizes left Kan extensions, differential causal density,
 and the RN-Kan duality theorem.
 
 ## References
-- Mahadevan, *Categories for AGI*, Chapter 15 ("Causal Density Functions")
+- Mahadevan, *Categories for AGI*, Chapter 22 ("Causal Density Functions")
 -/
 
 

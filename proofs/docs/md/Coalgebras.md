@@ -9,7 +9,7 @@ Formalizes labeled transition systems, coalgebras, and the probability
 distribution functor for modeling consciousness.
 
 ## References
-- Mahadevan, *Categories for AGI*, Chapter 16 ("Consciousness")
+- Mahadevan, *Categories for AGI*, Chapter 25 ("Consciousness")
 
 ```lean
 open CategoryTheory

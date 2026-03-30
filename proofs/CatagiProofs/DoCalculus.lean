@@ -8,7 +8,7 @@ the do-operator, interventional distributions, potential outcomes,
 and counterfactuals.
 
 ## References
-- Mahadevan, *Categories for AGI*, Chapter 14 ("Judo Calculus")
+- Mahadevan, *Categories for AGI*, Chapter 19 ("Judo Calculus")
 - Pearl, *Causality* (2009)
 -/
 

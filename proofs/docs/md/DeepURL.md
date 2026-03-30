@@ -1,9 +1,10 @@
+```lean
 import CatagiProofs.UniversalRL
 import Mathlib.Analysis.Normed.Group.Basic
 import Mathlib.Data.Finset.Basic
 import Mathlib.Data.Fintype.Basic
+```
 
-/-!
 # DeepURL — Deep Universal RL with structural constraints
 
 This module formalizes the later chapter on Deep URL with Geometric
@@ -19,9 +20,8 @@ The emphasis is on stable Lean abstractions for the chapter's main claims:
 ## References
 - Mahadevan, *Categories for AGI*, Chapter 24
   ("Deep URL with Geometric Transformers")
--/
 
-
+```lean
 open scoped BigOperators
 
 universe u v
@@ -115,8 +115,8 @@ theorem hypothesis_restriction {X : Type u} {Z : Type v}
     rcases hnonvacuous with ⟨h, hhH, hhnot⟩
     have hhconstrained : h ∈ constrainedHypothesisClass H C := hSubset hhH
     exact hhnot hhconstrained.2
+```
 
-/-!
 ## Status
 
 | Item | Description | Status |
@@ -131,4 +131,3 @@ theorem hypothesis_restriction {X : Type u} {Z : Type v}
 | Thm  | Nonnegative components imply nonnegative total loss | ✅ `totalLoss_nonneg` |
 | Def  | Constrained hypothesis class | ✅ `constrainedHypothesisClass` |
 | Thm  | Structural hypothesis restriction | ✅ `hypothesis_restriction` |
--/

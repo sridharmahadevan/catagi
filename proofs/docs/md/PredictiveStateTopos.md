@@ -1,10 +1,11 @@
+```lean
 import Mathlib.CategoryTheory.Functor.Basic
 import Mathlib.CategoryTheory.Types.Basic
 import Mathlib.Data.Finset.Basic
 import Mathlib.Analysis.Normed.Group.Basic
 import Mathlib.Algebra.BigOperators.Ring.Finset
+```
 
-/-!
 # PredictiveStateTopos — Predictive state representations in a topos
 
 This module formalizes the newer chapter on predictive state representations,
@@ -21,9 +22,8 @@ assertions:
 ## References
 - Mahadevan, *Categories for AGI*, Chapter 21
   ("Predictive State Representations in a Topos")
--/
 
-
+```lean
 open CategoryTheory
 open scoped BigOperators
 
@@ -126,8 +126,8 @@ theorem classical_psr_special_case {ι : Type u} {V : Type v} [Unique ι]
   subst hij
   dsimp [overlapMismatch]
   rw [sub_self]
+```
 
-/-!
 ## Status
 
 | Item | Description | Status |
@@ -141,4 +141,3 @@ theorem classical_psr_special_case {ι : Type u} {V : Type v} [Unique ι]
 | Def  | Predictive obstruction index | ✅ `obstructionIndex` |
 | Thm  | Global section implies zero pairwise obstruction | ✅ `overlapMismatch_eq_zero_of_globalSection` |
 | Thm  | Classical PSR is the single-context special case | ✅ `classical_psr_special_case` |
--/

@@ -14,7 +14,7 @@ comonad coalgebras forming a topos, Mitchell-Bénabou language,
 and Kripke-Joyal semantics.
 
 ## References
-- Mahadevan, *Categories for AGI*, Chapter 16 ("Consciousness")
+- Mahadevan, *Categories for AGI*, Chapter 25 ("Consciousness")
 -/
 
 

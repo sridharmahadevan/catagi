@@ -8,7 +8,7 @@ import Mathlib.Order.Heyting.Basic
 Formalizes the Lawvere-Tierney causal topology and the j-do calculus rules.
 
 ## References
-- Mahadevan, *Categories for AGI*, Chapter 14 ("Judo Calculus")
+- Mahadevan, *Categories for AGI*, Chapter 19 ("Judo Calculus")
 
 ```lean
 open CategoryTheory

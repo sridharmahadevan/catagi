@@ -10,7 +10,7 @@ Formalizes adjunctions, triangle identities, and the preservation theorems
 (right adjoints preserve limits, left adjoints preserve colimits).
 
 ## References
-- Mahadevan, *Categories for AGI*, Chapter 11 ("Adjoint Functors")
+- Mahadevan, *Categories for AGI*, Chapter 15 ("Adjoint Functors")
 - Mathlib: `CategoryTheory.Adjunction`
 
 ```lean

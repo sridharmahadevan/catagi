@@ -18,7 +18,7 @@ Formalizes causal functors, Heyting algebras, and universal properties
 of causal functors over topos categories.
 
 ## References
-- Mahadevan, *Categories for AGI*, Chapter 13 ("Topos Causal Models")
+- Mahadevan, *Categories for AGI*, Chapter 18 ("Topos Causal Models")
 
 ```lean
 open CategoryTheory

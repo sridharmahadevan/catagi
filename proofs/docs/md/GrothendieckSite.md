@@ -11,7 +11,7 @@ Formalizes sieves, Grothendieck topologies, sites, and the subobject
 classifier on presheaf toposes.
 
 ## References
-- Mahadevan, *Categories for AGI*, Chapter 13 ("Topos Causal Models")
+- Mahadevan, *Categories for AGI*, Chapter 18 ("Topos Causal Models")
 - Mathlib: `CategoryTheory.Sites`
 
 ```lean

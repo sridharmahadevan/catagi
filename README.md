@@ -10,9 +10,9 @@ This project formalizes covered definitions, theorems, lemmas, and examples
 from the book as machine-checked Lean 4 artifacts. The current coverage includes
 the original core chapters together with newer extensions for:
 
-- **BASKET / ROCKET** — operational plans, financially grounded reranking, and normalization operators
-- **Predictive State Representations in a Topos** — separating tests, local predictive sections, and obstruction-style gluing
-- **Universal RL / Deep URL** — coalgebraic RL abstractions, Bellman operators, structural losses, and hypothesis restriction
+- **Chapter 21: Predictive State Representations in a Topos** — together with the BASKET/ROCKET workflow sections, covering local predictive sections, obstruction-style gluing, and operational reranking
+- **Chapter 23 / Chapter 24: Universal RL / Deep URL** — coalgebraic RL abstractions, Bellman operators, structural losses, and hypothesis restriction
+- **Chapter 20: TCM-DB (Mapping Documents into Topos Causal Model Databases)** — currently represented through the existing `ToposCausal`, `GrothendieckSite`, and `CausalFunctors` formalizations rather than a separate Lean chapter module
 - the previously covered foundations: categories, functors, adjunctions, Kan extensions, toposes, causal models, coalgebras, transformers, and consciousness
 
 **Zero `sorry`** — every proof obligation is discharged.
@@ -107,6 +107,20 @@ lake exe mdgen CatagiProofs docs/md    # Generate per-module markdown
 - **PredictiveStateTopos**: Predictive profiles, separating test families, overlap obstructions, single-context PSR reduction
 - **UniversalRL**: Markov chains, MDPs, Bellman fixed points, asynchronous box invariants, final coalgebra witnesses
 - **DeepURL**: GT/DB-style structural loss, total loss decomposition, structural hypothesis restriction
+
+## TCM-DB Status
+
+The new book **Chapter 20** on **Mapping Documents into Topos Causal Model Databases
+(TCM-DB)** does not yet have a dedicated Lean module. Its current formal
+footprint is distributed across:
+
+- `ToposCausal.lean` for TCM objects and finite-limit structure
+- `GrothendieckSite.lean` for sieves, Grothendieck topologies, and subobject-classifier semantics
+- `CausalFunctors.lean` for causal functors, Kan extensions, and internal Heyting-style logic
+
+The recent FunctorFlow/cSQL case studies therefore remain expository examples
+in the manuscript, while their topos-theoretic categorical core is already
+reflected in the existing Lean formalization.
 
 ## License
 

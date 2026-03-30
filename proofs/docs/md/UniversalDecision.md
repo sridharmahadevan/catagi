@@ -9,7 +9,7 @@ Formalizes the Universal Decision Model (UDM) category, information fields,
 and Witsenhausen's intrinsic model for consciousness.
 
 ## References
-- Mahadevan, *Categories for AGI*, Chapter 16 ("Consciousness")
+- Mahadevan, *Categories for AGI*, Chapter 25 ("Consciousness")
 
 ```lean
 open CategoryTheory

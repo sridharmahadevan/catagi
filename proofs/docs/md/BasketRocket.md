@@ -1,11 +1,12 @@
+```lean
 import Mathlib.CategoryTheory.Category.Basic
 import Mathlib.CategoryTheory.Functor.KanExtension.Basic
 import Mathlib.Data.Finset.Basic
 import Mathlib.Data.Fintype.Basic
 import Mathlib.Data.Real.Basic
 import Mathlib.Order.Basic
+```
 
-/-!
 # BasketRocket — Operational plan extraction and financially grounded reranking
 
 This module formalizes the recent workflow-geometry chapters centered on
@@ -24,9 +25,8 @@ assertions in a Lean-friendly form:
   ("Predictive State Representations in a Topos"), especially the
   BASKET/ROCKET workflow sections
 - Earlier CatAGI chapters on Kan extensions and Transformer categories
--/
 
-
+```lean
 open CategoryTheory
 
 universe u
@@ -105,15 +105,15 @@ instance {α : Type*} : Category (OperationalPlan α) where
   assoc f g h := by
     ext e
     rfl
+```
 
-/-!
 ## BASKET and PLAN-KET
 
 The chapter interprets workflow completion via Kan extensions. The left Kan
 extension API is already available in Mathlib and is reused throughout this
 repository.
--/
 
+```lean
 #check @Functor.LeftExtension
 
 /-- `BASKET` extracts local operational plans from text. -/
@@ -123,11 +123,11 @@ structure BasketExtractor (Text : Type*) (α : Type*) where
 /-- `PLAN-KET` embeds extracted plans into a latent plan manifold. -/
 structure PlanEmbedding (α : Type*) (β : Type*) where
   encode : OperationalPlan α → β
+```
 
-/-!
 ## ROCKET
--/
 
+```lean
 /-- `ROCKET` selects a reward-maximizing plan from a finite local neighborhood. -/
 structure RocketSelection (Plan : Type*) (Context : Type*) [DecidableEq Plan] where
   neighborhood : Finset Plan
@@ -157,8 +157,8 @@ theorem RocketNormalization.normalized_plan_value_complete {α : Type*}
     (R : RocketNormalization α) (P : OperationalPlan α) :
     ValueComplete (R.normalize P) R.target :=
   R.value_complete P
+```
 
-/-!
 ## Status
 
 | Item | Description | Status |
@@ -171,4 +171,3 @@ theorem RocketNormalization.normalized_plan_value_complete {α : Type*}
 | Def  | ROCKET reranking | ✅ `RocketSelection` |
 | Thm  | ROCKET winner is reward-optimal in its neighborhood | ✅ `RocketSelection.chosen_is_optimal` |
 | Def  | ROCKET as normalization operator | ✅ `RocketNormalization` |
--/

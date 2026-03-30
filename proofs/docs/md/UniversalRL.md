@@ -1,11 +1,12 @@
+```lean
 import CatagiProofs.Coalgebras
 import CatagiProofs.UniversalDecision
 import Mathlib.Algebra.BigOperators.Ring.Finset
 import Mathlib.CategoryTheory.Limits.HasLimits
 import Mathlib.Data.Fintype.Basic
 import Mathlib.Data.Real.Basic
+```
 
-/-!
 # UniversalRL — Coalgebraic reinforcement learning
 
 This module formalizes the later-book chapter on Universal Reinforcement
@@ -22,9 +23,8 @@ main mathematical assertions:
 ## References
 - Mahadevan, *Categories for AGI*, Chapter 23
   ("Universal Reinforcement Learning")
--/
 
-
+```lean
 open CategoryTheory
 open scoped BigOperators
 
@@ -133,8 +133,8 @@ abbrev URLInformationField := InformationField
 theorem URLInformationField.empty_mem (F : URLInformationField) :
     (∅ : Set F.Ω) ∈ F.events :=
   InformationField.empty_mem F
+```
 
-/-!
 ## Status
 
 | Item | Description | Status |
@@ -150,4 +150,3 @@ theorem URLInformationField.empty_mem (F : URLInformationField) :
 | Def  | Final coalgebra witness | ✅ `FinalCoalgebraWitness` |
 | Thm  | Final coalgebra arrows are unique | ✅ `FinalCoalgebraWitness.hom_ext` |
 | Def  | URL information field | ✅ `URLInformationField` |
--/
