@@ -54,7 +54,7 @@ proofs/
 └── docs/
     ├── CatagiProofs.md        # Combined Markdown documentation
     ├── CatagiProofs.html      # HTML with table of contents
-    ├── CatagiProofs.pdf       # PDF via LuaLaTeX
+    ├── CatagiProofs.pdf       # PDF via XeLaTeX
 	    └── md/                    # Individual module docs
 ```
 
@@ -75,7 +75,8 @@ lake build            # Build all 25 modules
 ### Verify zero sorry
 
 ```bash
-grep -rn 'sorry' proofs/CatagiProofs/ --include='*.lean' | grep -v '\-\-' | grep -v '/\-'
+cd proofs
+grep -rn 'sorry' CatagiProofs/ --include='*.lean' | grep -v '\-\-' | grep -v '/\-'
 # Should return nothing
 ```
 
@@ -85,17 +86,25 @@ Pre-built docs are in `proofs/docs/`:
 
 | Format | File | Size |
 |--------|------|------|
-| Markdown | [`CatagiProofs.md`](proofs/docs/CatagiProofs.md) | 124 KB |
-| HTML | [`CatagiProofs.html`](proofs/docs/CatagiProofs.html) | 168 KB |
-| PDF | [`CatagiProofs.pdf`](proofs/docs/CatagiProofs.pdf) | 260 KB |
+| Markdown | [`CatagiProofs.md`](proofs/docs/CatagiProofs.md) | 149 KB |
+| HTML | [`CatagiProofs.html`](proofs/docs/CatagiProofs.html) | 201 KB |
+| PDF | [`CatagiProofs.pdf`](proofs/docs/CatagiProofs.pdf) | 194 KB |
 
 To regenerate:
 
 ```bash
 cd proofs
-lake exe mdgen CatagiProofs docs/md    # Generate per-module markdown
-# Then use pandoc for HTML/PDF
+./build_docs.sh
 ```
+
+`build_docs.sh` runs `lake build`, regenerates per-module Markdown with
+`lake exe mdgen CatagiProofs docs/md`, rebuilds the combined
+`docs/CatagiProofs.md`, and then uses `pandoc` to emit the HTML and PDF
+artifacts.
+
+The PDF target uses `pandoc` with `xelatex` and Unicode-capable fonts. On
+systems with different font inventories, a few advanced Lean glyphs may render
+slightly differently.
 
 ## Key Technical Decisions
 

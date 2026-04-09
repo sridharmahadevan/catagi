@@ -100,12 +100,15 @@ theorem grothendieck_eq_lawvere_tierney
 
 ## j-do Rules
 
-> [j-Rule 1]: Insert/delete observations — if (Y ⊥⊥ Z | X)_{G_{\overline{X}}}
->   then P(y | do(x), z) = P(y | do(x))
-> [j-Rule 2]: Action/observation exchange — if (Y ⊥⊥ Z | X)_{G_{\overline{X}, \underline{Z}}}
->   then P(y | do(x), do(z)) = P(y | do(x), z)
-> [j-Rule 3]: Insert/delete actions — if (Y ⊥⊥ Z | X)_{G_{\overline{X}, \overline{Z(S)}}}
->   then P(y | do(x), do(z)) = P(y | do(x))
+> [j-Rule 1]: Insert/delete observations — if
+>   `(Y ⊥⊥ Z | X)_{G_{\overline{X}}}`, then
+>   `P(y | do(x), z) = P(y | do(x))`
+> [j-Rule 2]: Action/observation exchange — if
+>   `(Y ⊥⊥ Z | X)_{G_{\overline{X}, \underline{Z}}}`, then
+>   `P(y | do(x), do(z)) = P(y | do(x), z)`
+> [j-Rule 3]: Insert/delete actions — if
+>   `(Y ⊥⊥ Z | X)_{G_{\overline{X}, \overline{Z(S)}}}`, then
+>   `P(y | do(x), do(z)) = P(y | do(x))`
 
 ```lean
 /-- j-Rule 1 (insert/delete observations): If a condition c is j-dense
