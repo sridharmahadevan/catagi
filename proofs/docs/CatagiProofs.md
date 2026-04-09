@@ -3219,10 +3219,12 @@ import Mathlib.CategoryTheory.Functor.Basic
 # Coalgebras — Definitions 60–62
 
 Formalizes labeled transition systems, coalgebras, and the probability
-distribution functor for modeling consciousness.
+distribution functor that provide the coalgebraic backbone reused by the
+Universal Reinforcement Learning and Consciousness chapters.
 
 ## References
-- Mahadevan, *Categories for AGI*, Chapter 25 ("Consciousness")
+- Mahadevan, *Categories for AGI*, Chapters
+  "Universal Reinforcement Learning" and "Consciousness"
 
 ```lean
 open CategoryTheory
@@ -3355,7 +3357,7 @@ comonad coalgebras forming a topos, Mitchell-Bénabou language,
 and Kripke-Joyal semantics.
 
 ## References
-- Mahadevan, *Categories for AGI*, Chapter 25 ("Consciousness")
+- Mahadevan, *Categories for AGI*, Chapter "Consciousness"
 
 ```lean
 open CategoryTheory
@@ -3476,10 +3478,14 @@ import Mathlib.Order.SetNotation
 # UniversalDecision — Definitions 63–65
 
 Formalizes the Universal Decision Model (UDM) category, information fields,
-and Witsenhausen's intrinsic model for consciousness.
+and Witsenhausen's intrinsic model for the chapter on Universal Decisions with
+Kan Extensions. These definitions are also reused later in the consciousness
+chapter.
 
 ## References
-- Mahadevan, *Categories for AGI*, Chapter 25 ("Consciousness")
+- Mahadevan, *Categories for AGI*, Chapter
+  "Universal Decisions with Kan Extensions"
+- Mahadevan, *Categories for AGI*, Chapter "Consciousness"
 
 ```lean
 open CategoryTheory
@@ -3631,8 +3637,8 @@ main mathematical assertions:
 - reuse of the UDM/information-field layer for asynchronous information flow.
 
 ## References
-- Mahadevan, *Categories for AGI*, Chapter 23
-  ("Universal Reinforcement Learning")
+- Mahadevan, *Categories for AGI*, Chapter
+  "Universal Reinforcement Learning"
 
 ```lean
 open CategoryTheory
@@ -3782,8 +3788,8 @@ The emphasis is on stable Lean abstractions for the chapter's main claims:
 - structural hypothesis restriction of the GT+DB family.
 
 ## References
-- Mahadevan, *Categories for AGI*, Chapter 24
-  ("Deep URL with Geometric Transformers")
+- Mahadevan, *Categories for AGI*, Chapter
+  "Deep URL with Geometric Transformers"
 
 ```lean
 open scoped BigOperators

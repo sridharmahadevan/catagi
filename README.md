@@ -2,7 +2,7 @@
 
 Formal verification in [Lean 4](https://lean-lang.org/) + [Mathlib](https://leanprover-community.github.io/mathlib4_docs/) of the categorical and mathematical claims from:
 
-> **Sridhar Mahadevan**, *Categories for AI: An Introduction to Category Theory with Applications to Artificial General Intelligence*, UMass CMPSCI 692CT.
+> **Sridhar Mahadevan**, *Categories for AGI*, UMass CMPSCI 692CT.
 
 ## Overview
 
@@ -10,9 +10,10 @@ This project formalizes covered definitions, theorems, lemmas, and examples
 from the book as machine-checked Lean 4 artifacts. The current coverage includes
 the original core chapters together with newer extensions for:
 
-- **Chapter 21: Predictive State Representations in a Topos** — together with the BASKET/ROCKET workflow sections, covering local predictive sections, obstruction-style gluing, and operational reranking
-- **Chapter 23 / Chapter 24: Universal RL / Deep URL** — coalgebraic RL abstractions, Bellman operators, structural losses, and hypothesis restriction
-- **Chapter 20: TCM-DB (Mapping Documents into Topos Causal Model Databases)** — currently represented through the existing `ToposCausal`, `GrothendieckSite`, and `CausalFunctors` formalizations rather than a separate Lean chapter module
+- **Universal Decisions with Kan Extensions** — Universal Decision Models, information fields, and Witsenhausen-style intrinsic models
+- **Predictive State Representations in a Topos** — together with the BASKET/ROCKET workflow sections, covering local predictive sections, obstruction-style gluing, and operational reranking
+- **Universal Reinforcement Learning / Deep URL with Geometric Transformers** — coalgebraic RL abstractions, Bellman operators, structural losses, and hypothesis restriction
+- **CSQL: Mapping Documents into Topos Causal Model Databases** — currently represented through the existing `ToposCausal`, `GrothendieckSite`, and `CausalFunctors` formalizations rather than a separate Lean chapter module
 - the previously covered foundations: categories, functors, adjunctions, Kan extensions, toposes, causal models, coalgebras, transformers, and consciousness
 
 **Zero `sorry`** — every proof obligation is discharged.
@@ -41,13 +42,13 @@ proofs/
 │   ├── JudoCalculus.lean      # Thm 17: j-do calculus, Grothendieck closure
 │   ├── BasketRocket.lean      # BASKET/ROCKET: operational plans, reranking, normalization
 │   ├── PredictiveStateTopos.lean # PSR in a topos: local tests, gluing, obstruction
-│   ├── Coalgebras.lean        # Defs 57-58: F-coalgebras, bisimulation
-│   ├── LearnCategory.lean     # Defs 59-61: Learn/Param categories (quotient types)
+│   ├── Coalgebras.lean        # Defs 60-62: LTS, F-coalgebras, probability distribution functor
+│   ├── LearnCategory.lean     # Defs 31-32: Learn/Param categories (quotient types)
 │   ├── TransformerCategory.lean # Defs 28-30: Transformer & LLM categories
 │   ├── DynamicCompositionality.lean # Def 41: Commutator energy, Čech obstruction
 │   ├── CommutatorBounds.lean  # Lemmas 1-4: Commutator bounds
-│   ├── ToposConsciousness.lean # Thm 19, Def 62: Topos consciousness, Mitchell-Bénabou
-│   ├── UniversalDecision.lean # Defs 63-65: Universal decision models, Witsenhausen
+│   ├── ToposConsciousness.lean # Thms 19-20: Topos consciousness, Mitchell-Bénabou, Kripke-Joyal
+│   ├── UniversalDecision.lean # Defs 63-65: UDMs, information fields, Witsenhausen
 │   ├── UniversalRL.lean       # URL: MDPs, Bellman operators, final coalgebra witnesses
 │   └── DeepURL.lean           # Deep URL: structural losses, residuals, hypothesis restriction
 └── docs/
@@ -105,12 +106,13 @@ lake exe mdgen CatagiProofs docs/md    # Generate per-module markdown
 - **DynamicCompositionality**: Proved properties (nonneg, symmetry, zero ↔ commutativity)
 - **BasketRocket**: Finite-poset operational plans, reward-maximizing reranking, normalization operators
 - **PredictiveStateTopos**: Predictive profiles, separating test families, overlap obstructions, single-context PSR reduction
+- **UniversalDecision**: UDM objects, information fields, and Witsenhausen-style intrinsic models
 - **UniversalRL**: Markov chains, MDPs, Bellman fixed points, asynchronous box invariants, final coalgebra witnesses
 - **DeepURL**: GT/DB-style structural loss, total loss decomposition, structural hypothesis restriction
 
 ## TCM-DB Status
 
-The new book **Chapter 20** on **Mapping Documents into Topos Causal Model Databases
+The book chapter **CSQL: Mapping Documents into Topos Causal Model Databases
 (TCM-DB)** does not yet have a dedicated Lean module. Its current formal
 footprint is distributed across:
 

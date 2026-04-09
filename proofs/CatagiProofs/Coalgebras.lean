@@ -5,10 +5,12 @@ import Mathlib.CategoryTheory.Functor.Basic
 # Coalgebras — Definitions 60–62
 
 Formalizes labeled transition systems, coalgebras, and the probability
-distribution functor for modeling consciousness.
+distribution functor that provide the coalgebraic backbone reused by the
+Universal Reinforcement Learning and Consciousness chapters.
 
 ## References
-- Mahadevan, *Categories for AGI*, Chapter 25 ("Consciousness")
+- Mahadevan, *Categories for AGI*, Chapters
+  "Universal Reinforcement Learning" and "Consciousness"
 -/
 
 

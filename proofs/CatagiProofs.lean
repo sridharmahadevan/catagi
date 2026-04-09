@@ -27,10 +27,12 @@ import CatagiProofs.BasketRocket
 import CatagiProofs.PredictiveStateTopos
 -- Causal density (Chapter 22; Definitions 58–59, Theorem 18)
 import CatagiProofs.CausalDensity
--- Consciousness (Chapter 25; Definitions 60–65, Theorems 19–20)
+-- Coalgebraic foundations reused by Universal Decisions, URL, and Consciousness
 import CatagiProofs.Coalgebras
-import CatagiProofs.ToposConsciousness
+-- Universal Decisions with Kan Extensions (Definitions 63–65)
 import CatagiProofs.UniversalDecision
--- Reinforcement learning extensions (Chapters 23–24)
+-- Reinforcement learning extensions: Universal RL and Deep URL
 import CatagiProofs.UniversalRL
 import CatagiProofs.DeepURL
+-- Consciousness (Theorems 19–20 and internal-language semantics)
+import CatagiProofs.ToposConsciousness

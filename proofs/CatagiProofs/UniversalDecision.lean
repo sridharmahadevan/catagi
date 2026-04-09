@@ -5,10 +5,14 @@ import Mathlib.Order.SetNotation
 # UniversalDecision — Definitions 63–65
 
 Formalizes the Universal Decision Model (UDM) category, information fields,
-and Witsenhausen's intrinsic model for consciousness.
+and Witsenhausen's intrinsic model for the chapter on Universal Decisions with
+Kan Extensions. These definitions are also reused later in the consciousness
+chapter.
 
 ## References
-- Mahadevan, *Categories for AGI*, Chapter 25 ("Consciousness")
+- Mahadevan, *Categories for AGI*, Chapter
+  "Universal Decisions with Kan Extensions"
+- Mahadevan, *Categories for AGI*, Chapter "Consciousness"
 -/
 
 

@@ -21,8 +21,8 @@ main mathematical assertions:
 - reuse of the UDM/information-field layer for asynchronous information flow.
 
 ## References
-- Mahadevan, *Categories for AGI*, Chapter 23
-  ("Universal Reinforcement Learning")
+- Mahadevan, *Categories for AGI*, Chapter
+  "Universal Reinforcement Learning"
 
 ```lean
 open CategoryTheory

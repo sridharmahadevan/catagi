@@ -17,8 +17,8 @@ The emphasis is on stable Lean abstractions for the chapter's main claims:
 - structural hypothesis restriction of the GT+DB family.
 
 ## References
-- Mahadevan, *Categories for AGI*, Chapter 24
-  ("Deep URL with Geometric Transformers")
+- Mahadevan, *Categories for AGI*, Chapter
+  "Deep URL with Geometric Transformers"
 -/
 
 
